@@ -24,74 +24,71 @@ footer {
   display: none;
 }
 
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
 }
 
 .hero {
+  position: relative;
+}
+
+.hero__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.hero__left {
-  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 60vw;
-}
-
-.hero__left::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-image: url("../images/bg-pattern-desktop.svg");
+  height: 100vh;
+  background-image: url(../images/bg-pattern-desktop.svg);
   background-position: center;
   background-size: cover;
-  width: 100%;
-  padding-top: 100vh;
+  background-repeat: no-repeat;
 }
 
-.hero__left .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.hero__left .hero-content .hero-main-title h1 {
-  font-size: 6rem;
-  font-weight: 200;
+.hero__content .hero-main-title {
   text-align: left;
-  color: #ce9797;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 1.4rem;
 }
 
-.hero__left .hero-content .hero-main-title h1 strong {
-  color: #413a3a;
+.hero__content .hero-main-title h1 {
   display: block;
-}
-
-.hero__left .hero-content .hero-sub-title {
-  margin: 1.2rem 0;
-}
-
-.hero__left .hero-content .hero-sub-title p {
+  font-size: 10rem;
+  font-weight: 200;
+  text-transform: uppercase;
   color: #ce9797;
-  font-size: 1.5rem;
-  text-align: left;
+  line-height: 9.5rem;
+  letter-spacing: 1rem;
 }
 
-.hero__right {
-  background-image: url("../images/hero-desktop.jpg");
+.hero__content .hero-main-title strong {
+  display: block;
+  font-weight: 600;
+  color: #413a3a;
+}
+
+.hero__content .hero-sub-title p {
+  font-size: 1.8rem;
+  color: #ce9797;
+}
+
+.hero__logo {
+  margin: 10% 0 10% 0;
+}
+
+.hero__bg-right {
+  background-image: url(../images/hero-desktop.jpg);
   background-position: top center;
   background-size: cover;
   width: 40vw;
   padding-top: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 /*# sourceMappingURL=style.css.map */

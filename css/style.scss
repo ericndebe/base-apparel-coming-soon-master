@@ -38,67 +38,62 @@ footer {
   display: none;
 }
 
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
 }
 
 .hero {
-  display: flex;
-  &__left {
-    position: relative;
+  position: relative;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 60vw;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      background-image: url("../images/bg-pattern-desktop.svg");
-      background-position: center;
-      background-size: cover;
-      width: 100%;
-      padding-top: 100vh;
-    }
+    height: 100vh;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      .hero-main-title {
-        h1 {
-          font-size: 6rem;
-          font-weight: 200;
-          text-align: left;
-          color: $color-primary;
-          text-transform: uppercase;
-          line-height: 1;
-          letter-spacing: 1.4rem;
-          strong {
-            color: $color-secondary;
-            display: block;
-          }
-        }
+    .hero-main-title {
+      text-align: left;
+      h1 {
+        display: block;
+        font-size: 10rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        color: $color-primary;
+        line-height: 9.5rem;
+        letter-spacing: 1rem;
       }
-      .hero-sub-title {
-        margin: 1.2rem 0;
-        p {
-          color: $color-primary;
-          font-size: 1.5rem;
-          text-align: left;
-        }
+      strong {
+        display: block;
+        font-weight: 600;
+        color: $color-secondary;
+      }
+    }
+    .hero-sub-title {
+      p {
+        font-size: 1.8rem;
+        color: $color-primary;
       }
     }
   }
 
-  &__right {
-    background-image: url("../images/hero-desktop.jpg");
+  &__logo {
+    margin: 10% 0 10% 0;
+  }
+
+  &__bg-right {
+    background-image: url(../images/hero-desktop.jpg);
     background-position: top center;
     background-size: cover;
     width: 40vw;
     padding-top: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
