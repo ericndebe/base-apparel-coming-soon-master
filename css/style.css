@@ -13,27 +13,126 @@ html {
   font-size: 62.5%;
 }
 
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 30%;
+  }
+}
+
 body {
   font-family: "Josefin Sans", sans-serif;
   color: #413a3a;
   font-weight: 400;
   line-height: 1.6;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    width: 100%;
+    padding: 0;
+  }
 }
 
 footer {
   display: none;
 }
 
-.wrapper {
-  width: 60%;
-  margin: 0 auto;
-}
-
-.hero {
+.main {
+  padding: 0 2rem;
   position: relative;
 }
 
-.hero__content {
+.hero__bg-desktop {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url("/images/hero-desktop.jpg");
+  background-position: top center;
+  background-size: cover;
+  width: 45%;
+  height: 100vh;
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero__bg-desktop {
+    display: none;
+  }
+}
+
+.hero__bg-mobile {
+  background-image: url("/images/hero-mobile.jpg");
+  background-position: top center;
+  background-size: cover;
+  /* padding-top: 100%; */
+  height: 35vh;
+  width: 100%;
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero__bg-mobile {
+    display: block;
+  }
+}
+
+.hero__intro {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55%;
+  height: 100vh;
+  padding: 0 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,51 +143,148 @@ footer {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 60vw;
-  height: 100vh;
-  background-image: url(../images/bg-pattern-desktop.svg);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__intro:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/bg-pattern-desktop.svg");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  z-index: -1;
 }
 
-.hero__content .hero-main-title {
+@media screen and (max-width: 1024px) {
+  .hero__intro {
+    width: 100%;
+    padding: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero__intro .logo {
+    margin: 5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__intro .logo {
+    position: absolute;
+    top: -10rem;
+  }
+}
+
+.hero__intro__main-text {
   text-align: left;
-}
-
-.hero__content .hero-main-title h1 {
-  display: block;
-  font-size: 10rem;
-  font-weight: 200;
+  margin-bottom: 2rem;
+  font-size: 4.6rem;
   text-transform: uppercase;
-  color: #ce9797;
-  line-height: 9.5rem;
-  letter-spacing: 1rem;
+  letter-spacing: 1.6rem;
 }
 
-.hero__content .hero-main-title strong {
+@media screen and (max-width: 1024px) {
+  .hero__intro__main-text {
+    text-align: center;
+    margin: 10rem;
+  }
+}
+
+.hero__intro__main-text h1 {
   display: block;
-  font-weight: 600;
-  color: #413a3a;
+  color: #ce9797;
+  font-weight: 200;
 }
 
-.hero__content .hero-sub-title p {
-  font-size: 1.8rem;
+.hero__intro__main-text span {
+  display: block;
+  color: #413a3a;
+  font-weight: 400;
+}
+
+.hero__intro__sub-text p {
+  color: #ce9797;
+  font-size: 2.1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero__intro__sub-text p {
+    text-align: center;
+    margin: 10rem;
+  }
+}
+
+.hero__email-field {
+  margin: 5rem 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero__email-field {
+    text-align: center;
+    margin: 10rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__email-field {
+    max-width: 500px;
+  }
+}
+
+.hero__email-field span {
+  position: relative;
+  height: 100%;
+  display: block;
+}
+
+.hero__email-field span::after {
+  content: url("/images/icon-arrow.svg");
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5rem;
+  padding: 10px 25px;
+  -webkit-box-shadow: -1px 4px 20px 0px #ce9797;
+          box-shadow: -1px 4px 20px 0px #ce9797;
+}
+
+.hero__email-field #txtemail {
+  border-radius: 5rem;
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid #ce9797;
+  position: relative;
   color: #ce9797;
 }
 
-.hero__logo {
-  margin: 10% 0 10% 0;
+.hero__email-field #txtemail::-webkit-input-placeholder {
+  color: #ce9797;
 }
 
-.hero__bg-right {
-  background-image: url(../images/hero-desktop.jpg);
-  background-position: top center;
-  background-size: cover;
-  width: 40vw;
-  padding-top: 100vh;
-  position: absolute;
-  right: 0;
-  top: 0;
+.hero__email-field #txtemail:-ms-input-placeholder {
+  color: #ce9797;
+}
+
+.hero__email-field #txtemail::-ms-input-placeholder {
+  color: #ce9797;
+}
+
+.hero__email-field #txtemail::placeholder {
+  color: #ce9797;
 }
 /*# sourceMappingURL=style.css.map */
